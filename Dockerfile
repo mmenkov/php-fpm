@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
 		libxml2 \
 		xz-utils \
 		libfreetype6-dev \
-		libjpeg62-turbo-dev \
 		libmcrypt-dev \
 		libpng12-dev \
 		libbz2-dev \
