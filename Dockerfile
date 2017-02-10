@@ -1,4 +1,4 @@
-FROM mmenkov:supervisor
+FROM mmenkov/supervisor
 
 ENV PHPIZE_DEPS \
 		autoconf \
