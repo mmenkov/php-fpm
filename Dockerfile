@@ -1,6 +1,6 @@
 # Build an image of latest stable PHP-FPM
 FROM php:7.0-fpm
-MAINTAINER Five Nights <all@5nights.ru>
+MAINTAINER Maxim Menkov <m.menkov94@gmail.com>
 
 WORKDIR /srv/
 
@@ -43,7 +43,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD cron && \
     crontab /etc/cron.d/crontab && \
-    /lib/systemd/system/laravel-worker.target && \
+    sytemctl start laravel-worker.target && \
     php-fpm
 
 #advancecomp \
