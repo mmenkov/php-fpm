@@ -43,7 +43,7 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD cron && \
     crontab /etc/cron.d/crontab && \
-    sytemctl start laravel-worker.target && \
+    systemctl start laravel-worker.target && \
     php-fpm
 
 #advancecomp \
