@@ -40,6 +40,11 @@ ADD crontab /etc/cron.d/crontab
 RUN chmod 0644 /etc/cron.d/crontab
 RUN touch /var/log/cron.log
 
+RUN ln -s /lib/systemd/system/systemd-logind.service /etc/systemd/system/multi-user.target.wants/systemd-logind.service
+RUN mkdir /etc/systemd/system/sockets.target.wants/
+RUN ln -s /lib/systemd/system/dbus.socket /etc/systemd/system/sockets.target.wants/dbus.socket
+RUN systemctl set-default multi-user.target
+
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 CMD cron && \
