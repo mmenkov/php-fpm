@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
         jpegoptim \
         libjpeg-progs \
         wget \
+        dbus \
         cron \
     && docker-php-ext-install -j$(nproc) curl iconv mbstring mcrypt mysqli pdo pdo_mysql tokenizer \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
